@@ -80,16 +80,13 @@ const string getRawKeyboardData() {
     string rawKeyboardData;
     string rawKeyboardLine;
 
-    getline(cin, rawKeyboardLine);
-    while (!cin.eof()) {
+    while (getline(cin, rawKeyboardLine)) {
         if (rawKeyboardData.empty()) {
             rawKeyboardData = rawKeyboardLine;
         } else {
             rawKeyboardData += "\n" + rawKeyboardLine;
         }
-        getline(cin, rawKeyboardLine);
     }
-
     return rawKeyboardData;
 }
 
